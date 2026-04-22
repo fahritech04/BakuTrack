@@ -1,0 +1,14 @@
+[Unit]
+Description=BakuTrack Laravel Queue Worker
+After=network.target redis.service
+
+[Service]
+User=www-data
+Group=www-data
+Restart=always
+RestartSec=5
+WorkingDirectory=/var/www/bakutrack/backend
+ExecStart=/usr/bin/php artisan queue:work redis --sleep=3 --tries=3 --timeout=120
+
+[Install]
+WantedBy=multi-user.target

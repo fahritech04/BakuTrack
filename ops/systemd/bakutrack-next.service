@@ -1,0 +1,15 @@
+[Unit]
+Description=BakuTrack Next.js App
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+Restart=always
+RestartSec=5
+WorkingDirectory=/var/www/bakutrack/frontend
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/npm run start -- --port 3000
+
+[Install]
+WantedBy=multi-user.target

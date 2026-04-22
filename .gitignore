@@ -1,0 +1,11 @@
+# Workspace-wide runtime artifacts
+runlogs/
+
+# Python
+**/__pycache__/
+*.py[cod]
+
+# Local env
+.env
+.env.*
+
